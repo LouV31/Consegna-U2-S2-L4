@@ -1,0 +1,177 @@
+// Custom.scss
+// Option B: Include parts of Bootstrap
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "./assets/bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+// $primary: rgb(255, 0, 153);
+// $secondary: rgb(0, 174, 255);
+
+//$card-border-width: 2px;
+// $spacer: 0.5rem;
+/*$grid-gutter-width: 1rem;
+
+$nav-link-font-size: 30px;
+$nav-link-font-weight: 600;
+$alert-margin-bottom: 0.25rem;
+*/
+
+$danger: #ff0077;
+$info: #00ffea;
+$light: #f3eeff;
+$epicode-1: #5726c3;
+$epicode-2: #8625a5;
+$epicode-3: #cb2376;
+// 3. Include remainder of required Bootstrap stylesheets
+
+@import "./assets/bootstrap/scss/variables";
+@import "./assets/bootstrap/scss/variables-dark";
+$h7-font-size: $font-size-base * 1;
+$h8-font-size: $font-size-base * 0.75;
+$h9-font-size: $font-size-base * 0.5;
+$h10-font-size: $font-size-base * 0.25;
+$input-btn-padding-y: 0.75rem;
+$input-btn-padding-x: 2.5rem;
+$grid-gutter-width: 0.5rem;
+$badge-border-radius: 50px;
+$btn-border-radius: 50px;
+$input-border-radius: 50px;
+
+$card-color: $info;
+$card-bg: $dark;
+$card-border-radius: 2rem;
+
+// 4. Include any default map overrides here
+//$custom-theme-colors: (
+//  "primary": rgb(255, 0, 153),
+//  "secondary": rgb(0, 174, 255),
+//  "alt-stefano-light": rgb(220, 255, 124),
+//  "alt-stefano-dark": rgb(120, 124, 3)
+//);
+//$theme-colors: map-merge($theme-colors, $custom-theme-colors);
+// $grid-breakpoints: (
+//   xs: 0,
+//   sm: 576px,
+//   md: 768px,
+//   lg: 992px,
+//   xl: 1200px,
+//   xxl: 1400px,
+//   xxxl: 1600px
+// );
+// $container-max-widths: (
+//   sm: 540px,
+//   md: 720px,
+//   lg: 960px,
+//   xl: 1140px,
+//   xxl: 1320px,
+//   xxxl: 1520px
+// );
+// piuttosto che riportare anche valori già esistenti senza cambiarli, ha più senso aggiungere (fare un merge) di
+// un ultimo valore alla mappa esistente:
+//creo una nuova mappa che verrà poi aggiunta a quella principale
+//    /*$giga-breakpoint: (
+//  xxxl: 1600px
+//);
+//creo una nuova mappa che verrà poi aggiunta a quella principale
+//$giga-max-widths: (
+//  xxxl: 1520px
+//);
+// qui le mie mappe si uniscono alle originali
+//    $grid-breakpoints: map-merge($grid-breakpoints, $giga-breakpoint);
+//$container-max-widths: map-merge($container-max-widths, $giga-max-widths);
+//
+// 5. Include remainder of required parts
+@import "./assets/bootstrap/scss/maps";
+
+$font-sizes-added: (
+    7: $h7-font-size,
+    8: $h8-font-size,
+    9: $h9-font-size,
+    10: $h10-font-size,
+);
+
+$font-sizes: map-merge($font-sizes, $font-sizes-added);
+
+$border-widths-added: (
+    6: 6px,
+    7: 7px,
+    8: 8px,
+    9: 9px,
+    10: 10px,
+);
+
+$border-widths: map-merge($border-widths, $border-widths-added);
+
+$epicode-colors: (
+    "epicode-1": $epicode-1,
+    "epicode-2": $epicode-2,
+    "epicode-3": $epicode-3,
+);
+
+@each $key, $val in $epicode-colors {
+    .text-#{$key} {
+        color: $val;
+    }
+}
+$theme-colors: map-merge($theme-colors, $epicode-colors);
+
+$grid-breakpoints-added: (
+    "3xl": 1600px,
+    "4xl": 1800px,
+);
+
+$grid-breakpoints: map-merge($grid-breakpoints, $grid-breakpoints-added);
+
+$container-max-widths-added: (
+    "3xl": 1520px,
+    "4xl": 1720px,
+);
+
+$container-max-widths: map-merge($container-max-widths, $container-max-widths-added);
+
+@import "./assets/bootstrap/scss/mixins";
+@import "./assets/bootstrap/scss/utilities";
+
+// Layout & components
+@import "./assets/bootstrap/scss/root";
+@import "./assets/bootstrap/scss/reboot";
+@import "./assets/bootstrap/scss/type";
+@import "./assets/bootstrap/scss/images";
+@import "./assets/bootstrap/scss/containers";
+@import "./assets/bootstrap/scss/grid";
+@import "./assets/bootstrap/scss/tables";
+@import "./assets/bootstrap/scss/forms";
+@import "./assets/bootstrap/scss/buttons";
+@import "./assets/bootstrap/scss/transitions";
+@import "./assets/bootstrap/scss/dropdown";
+@import "./assets/bootstrap/scss/button-group";
+@import "./assets/bootstrap/scss/nav";
+@import "./assets/bootstrap/scss/navbar";
+@import "./assets/bootstrap/scss/card";
+@import "./assets/bootstrap/scss/accordion";
+@import "./assets/bootstrap/scss/breadcrumb";
+@import "./assets/bootstrap/scss/pagination";
+
+@import "./assets/bootstrap/scss/badge";
+@import "./assets/bootstrap/scss/alert";
+@import "./assets/bootstrap/scss/progress";
+@import "./assets/bootstrap/scss/list-group";
+@import "./assets/bootstrap/scss/close";
+// @import "./bootstrap/scss/toasts";
+// @import "./bootstrap/scss/modal";
+// @import "./bootstrap/scss/tooltip";
+// @import "./bootstrap/scss/popover";
+// @import "./bootstrap/scss/carousel";
+// @import "./bootstrap/scss/spinners";
+// @import "./bootstrap/scss/offcanvas";
+// @import "./bootstrap/scss/placeholders";
+
+// Helpers
+@import "./assets/bootstrap/scss/helpers";
+
+// Utilities
+@import "./assets/bootstrap/scss/utilities/api";
+// scss-docs-end import-stack
+
+// 8. Add additional custom code here
